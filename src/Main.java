@@ -1,4 +1,6 @@
+import desafio.bootcamp.Bootcamp;
 import desafio.bootcamp.Curso;
+import desafio.bootcamp.Dev;
 import desafio.bootcamp.Mentoria;
 
 import java.time.LocalDate;
@@ -15,7 +17,20 @@ public class Main {
         mentoria.setDescricao("Descrição");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso);
-        System.out.println(mentoria);
+        Dev dev = new Dev();
+        dev.setNome("Lorrayne");
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootecamp Java Developer");
+        bootcamp.setDescricao("Descrição...");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(mentoria);
+
+        dev.inscreverBootcamp(bootcamp);
+
+        System.out.println(dev.getConteudosInscritos());
+
+        System.out.println(dev.getConteudosConcluidos());
+
     }
 }
