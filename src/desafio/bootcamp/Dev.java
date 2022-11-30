@@ -65,4 +65,16 @@ public class Dev {
     public double calcularTotalXp() {
         return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXP).sum();
     };
+
+    public void criarTopicoForum(Bootcamp bootcamp, String assunto, String tecnologia, String descricao) {
+        Forum forum = new Forum();
+        forum.setAssunto(assunto);
+        forum.setTecnologia(tecnologia);
+        forum.setDescricao(descricao);
+        bootcamp.getForuns().add(forum);
+    }
+
+    public void comentarForum(Forum forum, String comentario) {
+        forum.getComentarios().add(comentario);
+    }
 }
