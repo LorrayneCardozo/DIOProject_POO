@@ -7,5 +7,7 @@ A seguir, um diagrama representando os respectivos atributos, métodos e classes
 ![](img/diagrama.png)
 
 ## 🛠️ Evoluções
+
 Classe *Fórum*
+
 Métodos *Criar tópico no fórum* e *Comentar no Fórum* (Classe Dev)
