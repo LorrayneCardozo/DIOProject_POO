@@ -47,6 +47,15 @@ public class Dev {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
 
+    @Override
+    public String toString() {
+        return "Dev{" +
+                "nome='" + nome + '\'' +
+                ", conteudosInscritos=" + conteudosInscritos +
+                ", conteudosConcluidos=" + conteudosConcluidos +
+                '}';
+    }
+
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
@@ -66,12 +75,14 @@ public class Dev {
         return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXP).sum();
     };
 
-    public void criarTopicoForum(Bootcamp bootcamp, String assunto, String tecnologia, String descricao) {
+    public Forum criarTopicoForum(Bootcamp bootcamp, String assunto, String tecnologia, String descricao) {
         Forum forum = new Forum();
         forum.setAssunto(assunto);
         forum.setTecnologia(tecnologia);
         forum.setDescricao(descricao);
         bootcamp.getForuns().add(forum);
+
+        return forum;
     }
 
     public void comentarForum(Forum forum, String comentario) {
